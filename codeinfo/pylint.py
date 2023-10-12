@@ -22,13 +22,15 @@ class PyLintItem:
 class PyLintResult:
     items: List[PyLintItem]
 
-    def get_type_analysis(self) -> Mapping[str, int]:
+    @property
+    def types(self) -> Mapping[str, int]:
         retval = {}
         for item in self.items:
             retval[item.type] = retval.get(item.type, 0) + 1
         return retval
 
-    def get_type_header_analysis(self) -> Mapping[str, int]:
+    @property
+    def headers(self) -> Mapping[str, int]:
         retval = {}
         for item in self.items:
             header = item.type[0]
