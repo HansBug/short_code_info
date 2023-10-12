@@ -2,3 +2,4 @@ hbutils>=0.9.1
 pylint>=3.0.0
 radon>=6.0.0
 pep8
+openai
